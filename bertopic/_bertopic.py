@@ -4035,7 +4035,7 @@ class BERTopic:
             for tuner in self.representation_model:
                 logger.info("rep as list")
                 topics = tuner.extract_topics(self, documents, c_tf_idf, topics)
-        elif isinstance(self.representation_model, BaseRepresentation):\
+        elif isinstance(self.representation_model, BaseRepresentation):
             logger.info("rep as baseRep")
             topics = self.representation_model.extract_topics(self, documents, c_tf_idf, topics)
         elif isinstance(self.representation_model, dict):
@@ -4046,6 +4046,7 @@ class BERTopic:
 
         # Extract additional topic aspects
         if calculate_aspects and isinstance(self.representation_model, dict):
+            logger.info("This is where we should do stuff")
             for aspect, aspect_model in self.representation_model.items():
                 aspects = topics.copy()
                 if aspect != "Main":
