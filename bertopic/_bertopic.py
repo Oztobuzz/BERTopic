@@ -3772,7 +3772,7 @@ class BERTopic:
             documents,
             self.topic_representations_,
             nr_samples=500,
-            nr_repr_docs=5
+            nr_repr_docs= 7
         )
         self.representative_docs_ = repr_docs
 
